@@ -22,19 +22,3 @@ h3 {
 * {
     box-sizing: border-box;
 }
-
-.react-horizontal-scrolling-menu--scroll-container {
-    max-width: 80rem;
-}
-
-.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
-    display: none;
-    width: 0;
-}
-
-.react-horizontal-scrolling-menu--scroll-container {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-}
