@@ -48,7 +48,7 @@ export default function ({
       <div className={classes.optn}>
 
       {showDropDown ? (
-        optionList.map((item) => <div  onClick={onClickHandler}>{item}</div>)
+        optionList.map((item,index) => <div key={index}  onClick={onClickHandler}>{item}</div>)
       ) : (
         <span></span>
       )}

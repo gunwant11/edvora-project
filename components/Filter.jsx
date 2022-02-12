@@ -12,23 +12,23 @@ export default function Filter() {
   const [selectedProduct, setSelectedProduct] = useState("");
   const [selectedState, setSelectedState] = useState("");
 
+  const filter = (property, property2) => {
+    if (property2) {
+      const array = productData
+        .map((data, i) => data[property][property2])
+        .filter((value, index, self) => self.indexOf(value) === index);
+      return array;
+    }
+    const array = productData
+      .map((data, i) => data[property])
+      .filter((value, index, self) => self.indexOf(value) === index);
+    return array;
+  };
 
   useEffect(() => {
-    const productFilter = productData
-      .map((data,i) => data.product_name)
-      .filter((value, index, self) => self.indexOf(value) === index);
-    const cityFilter = productData
-      .map((data,i) => {
-        let item = data.address.city;
-        return item;
-      })
-      .filter((value, index, self) => self.indexOf(value) === index);
-    const stateFilter = productData
-      .map((data,i) => {
-        let item = data.address.state;
-        return item;
-      })
-      .filter((value, index, self) => self.indexOf(value) === index);
+    const productFilter = filter("product_name");
+    const cityFilter = filter("address", "city");
+    const stateFilter = filter("address", "state");
 
     setProduct(productFilter);
     setCity(cityFilter);
@@ -41,34 +41,30 @@ export default function Filter() {
       <p className={classes.line}></p>
 
       <Select
-
+        key={1}
         optionList={product}
         listName="Product"
         property="product_name"
         selectedOption={selectedProduct}
         setSelectedOption={setSelectedProduct}
-        
-        
       />
       <Select
-
+        key={2}
         optionList={stateArry}
         listName="State"
         property="address"
         pro="state"
         selectedOption={selectedState}
         setSelectedOption={setSelectedState}
-        
       />
       <Select
-
+        key={3}
         optionList={cityArry}
         listName="City"
         property="address"
         pro="city"
         selectedOption={selectedCity}
         setSelectedOption={setSelectedCity}
-        
       />
     </div>
   );
