@@ -1,26 +1,33 @@
-import React,{useRef} from "react";
+import React,{useRef, useState,useEffect} from "react";
 import ProductItem from "./ProductItem";
 import classes from "./ProductList.module.scss";
-import HorizontalScroll from 'react-scroll-horizontal'
+
 
 export default function ProductList({ productData }) {
+  const [scroll, setScroll] = useState()
+  const [node, setNode] = useState()
 
-  const scrollref = useRef();
+  const scrollref = useRef(0);
+  const Containeref = useRef(0);
   const child   = { width: `18rem`, height: `100%`}
   const move = (e) =>{
-    console.log(e)
+    
+    
   }
-
+useEffect(()=>{
+  setScroll(scrollref.current)
+  setNode(Containeref.current)
+    
+})
 
   return (
     <div className={classes.container}>
       <div className={classes.title}>Product Name</div>
       <p className={classes.line}></p>
-      <div className={classes.col} onScroll={move} ref={scrollref} >
-        <HorizontalScroll
-        reverseScroll={true}
-        style={{ width: `80rem`, height: `15rem` }}
-        >
+      <div>
+
+      <div className={classes.col} onScroll={move} ref={Containeref} >
+        
           {productData.map((data, index) => (
             <ProductItem
               styles={child}
@@ -36,8 +43,11 @@ export default function ProductList({ productData }) {
               
             />
           ))}
-        </HorizontalScroll>
+          
+      </div>
+
       </div>
     </div>
   );
 }
+

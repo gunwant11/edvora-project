@@ -19,4 +19,10 @@
     padding-right: 2rem;
     max-width: 80rem;
     border-radius: 0.8rem;
+    overflow-y: scroll;
+}
+
+.col::-webkit-scrollbar {
+    display: none;
+    width: 0;
 }
