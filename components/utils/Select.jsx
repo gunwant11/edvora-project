@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../context";
 import classes from "./Select.module.scss";
-export default function ({
+export default function Select ({
   optionList,
   listName,
   selectedOption,
