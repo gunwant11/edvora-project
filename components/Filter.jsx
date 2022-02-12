@@ -15,16 +15,16 @@ export default function Filter() {
 
   useEffect(() => {
     const productFilter = productData
-      .map((data) => data.product_name)
+      .map((data,i) => data.product_name)
       .filter((value, index, self) => self.indexOf(value) === index);
     const cityFilter = productData
-      .map((data) => {
+      .map((data,i) => {
         let item = data.address.city;
         return item;
       })
       .filter((value, index, self) => self.indexOf(value) === index);
     const stateFilter = productData
-      .map((data) => {
+      .map((data,i) => {
         let item = data.address.state;
         return item;
       })
@@ -33,7 +33,6 @@ export default function Filter() {
     setProduct(productFilter);
     setCity(cityFilter);
     setState(stateFilter);
-    console.log(product, cityArry, stateArry);
   }, [productData]);
 
   return (
@@ -42,6 +41,7 @@ export default function Filter() {
       <p className={classes.line}></p>
 
       <Select
+
         optionList={product}
         listName="Product"
         property="product_name"
@@ -51,6 +51,7 @@ export default function Filter() {
         
       />
       <Select
+
         optionList={stateArry}
         listName="State"
         property="address"
@@ -60,6 +61,7 @@ export default function Filter() {
         
       />
       <Select
+
         optionList={cityArry}
         listName="City"
         property="address"

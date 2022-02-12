@@ -24,7 +24,6 @@ export default function ({
       newList = productData.filter((x) => x[property] === e.target.textContent);
     setDisplayProducts(newList);
     setShowDropDown(false);
-    console.log(newList, selectedOption, pro);
   };
   return (
     <div>

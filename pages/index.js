@@ -13,7 +13,6 @@ export default function Home({ data }) {
   useEffect(() => {
     setProductData(data);
     setDisplayProducts(data)
-    console.log(productData);
   }, [productData, data]);
 
   return (
