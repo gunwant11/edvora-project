@@ -26,3 +26,11 @@
     display: none;
     width: 0;
 }
+
+.rand {
+    display: flex;
+    align-items: center;
+    svg {
+        margin: 15px;
+    }
+}
