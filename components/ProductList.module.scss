@@ -1,0 +1,22 @@
+.container {
+    margin-bottom: 2rem;
+    .line {
+        background-color: white;
+        border-radius: 1rem;
+        height: 1.5px;
+        margin: 0.8rem 0.5rem;
+        opacity: 0.5;
+    }
+    .title {
+        font-size: 1.3rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.col {
+    display: flex;
+    background-color: #131313;
+    padding-right: 2rem;
+    max-width: 80rem;
+    border-radius: 0.8rem;
+}

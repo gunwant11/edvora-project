@@ -1,0 +1,43 @@
+.card {
+    padding: 0.9rem;
+    background-color: #232323;
+    min-width: 18rem;
+    margin: 1.8rem;
+    margin-right: 0;
+    border-radius: .5rem;
+    p {
+        padding-bottom: 0.2rem;
+        margin: 0;
+    }
+}
+
+.row {
+    display: flex;
+    img {
+        border-radius: .3rem;
+    }
+}
+
+.box {
+    padding: 0 1rem;
+    >div {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    >p {
+        opacity: 0.5;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.row_two {
+    display: flex;
+    opacity: 0.5;
+    justify-content: space-between;
+}
+
+.description {
+    opacity: 0.5;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
